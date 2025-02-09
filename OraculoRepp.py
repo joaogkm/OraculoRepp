@@ -1,6 +1,7 @@
 import streamlit as st
 import tempfile
 import os
+import langchain
 from langchain.memory import ConversationBufferMemory
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
