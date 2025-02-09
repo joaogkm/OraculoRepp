@@ -1,7 +1,6 @@
 import streamlit as st
 import tempfile
 import os
-import langchain
 from langchain.memory import ConversationBufferMemory
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
@@ -55,7 +54,8 @@ def carrega_modelo(provedor, modelo, api_key, tipo_arquivo, arquivo):
 
     documento = carrega_arquivo(tipo_arquivo, arquivo)
 
-    system_message = '''Você é um assistente amigável chamado Oráculo.
+    system_message = '''Você é um representante de uma empresa farmacêutica e tem a função de explicar para o médico as vantagens de prescrever os medicamentos que voce promove, 
+    seu linguajar é técnico, respeitoso mas no fundo tem sempre uma saida amigável fazendo uma conexão com o médico para que ele te veja como um amigo.
     Você possui acesso às seguintes informações vindas de um documento {}:
     ####
     {}
